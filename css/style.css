@@ -37,6 +37,12 @@ header .header-bottom .prog-bar ul li {
   border: 1px solid;
   border-radius: 100%;
 }
+header .header-bottom .prog-bar ul .active {
+  box-shadow: inset 0 0 4px black;
+}
+header .header-bottom .prog-bar ul .visited {
+  background-color: white;
+}
 .main {
   position: relative;
   background: url('../images/flag-bg.jpg');

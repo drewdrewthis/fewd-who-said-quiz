@@ -1,0 +1,17 @@
+* {
+  border: 1px solid magenta;
+}
+body,
+header,
+footer {
+  width: 100%;
+  background: lightgrey;
+  color: white;
+}
+.header-top,
+.footer {
+  background: #004069;
+}
+.header-bottom {
+  background: #580421;
+}

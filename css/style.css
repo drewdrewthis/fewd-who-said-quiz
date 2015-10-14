@@ -1,14 +1,18 @@
 * {
   border: 1px solid magenta;
   box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.1);
 }
 body,
 header,
 footer {
   width: 100%;
-  background: lightgrey;
   color: white;
   text-align: center;
+}
+ul {
+  list-style: none;
+  padding: 0;
 }
 .header-top,
 footer {
@@ -16,9 +20,6 @@ footer {
 }
 .header-bottom {
   background: #580421;
-}
-.header-bottom .prog-bar ul {
-  list-style: none;
 }
 .header-bottom .prog-bar ul li {
   display: inline-block;
@@ -30,14 +31,19 @@ footer {
 .main {
   position: relative;
 }
+.main li:not(.title) {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 100%;
+  margin: auto;
+}
 .main .col {
   width: 50%;
   float: left;
 }
 .main .candidates-col {
   position: absolute;
-  width: 6rem;
-  left: calc(47%);
+  left: calc(50% - 1.5rem);
   top: 0;
 }
 footer {

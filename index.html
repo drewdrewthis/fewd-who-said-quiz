@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Who Said? Quiz Game</title>
+	<style type="text/css" src="css/normalize.css"></style>
+	<style type="text/css" src="css/style.css"></style>
+	<script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+	<header>
+		<div class="header-top"><h1>What would they say?&trade;</h1></div>
+		<div class="header bottom">
+			<h2>"Should abortion be a woman's unrestricted right?"</h2>
+			<div class="prog-bar">
+				<ul>
+					<li class="active"></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+		</div>
+	</header>
+	<section class="main">
+		<div class="col-left">
+			<ul class="no-list">
+				<li class="title">NO</li>
+				<li id="answer-1"></li>
+				<li id="answer-2"></li>
+				<li id="answer-3"></li>
+				<li id="answer-4"></li>
+			</ul>
+		</div>
+		<div class="col-mid">
+			<ul class="candidate-list">
+				<li id="candidate-1">
+					<div class="img-wrapper">
+						<img src="images/bernie.jpg" alt="">
+					</div>
+				</li>
+				<li id="candidate-2">
+					<div class="img-wrapper">
+						<img src="images/trump.jpg" alt="">
+					</div>
+				</li>
+				<li id="candidate-3">
+					<div class="img-wrapper">
+						<img src="images/hilary.jpg" alt="">
+					</div>
+				</li>
+				<li id="candidate-4">
+					<div class="img-wrapper">
+						<img src="images/cruz.jpg" alt="">
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="col-right">
+			<ul class="yes-list">
+				<li class="title">YES</li>
+				<li id="answer-1"></li>
+				<li id="answer-2"></li>
+				<li id="answer-3"></li>
+				<li id="answer-4"></li>
+			</ul>
+		</div>
+	</section>
+	<footer>
+		<div class="container">
+			<div class="left">SCORE: <span class="score">425</span></div>
+			<div class="right"><span class="reset">Reset Game</span></div>
+		</div>
+	</footer>
+</body>
+</html>

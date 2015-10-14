@@ -11,11 +11,21 @@ footer {
   text-align: center;
 }
 .header-top,
-.footer {
+footer {
   background: #004069;
 }
 .header-bottom {
   background: #580421;
+}
+.header-bottom .prog-bar ul {
+  list-style: none;
+}
+.header-bottom .prog-bar ul li {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid;
+  border-radius: 100%;
 }
 .main {
   position: relative;
@@ -29,4 +39,8 @@ footer {
   width: 6rem;
   left: calc(47%);
   top: 0;
+}
+footer {
+  position: absolute;
+  bottom: 0;
 }

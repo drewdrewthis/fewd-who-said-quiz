@@ -15,11 +15,25 @@ body, header, footer {
 	text-align: center;
 }
 
-.header-top, .footer {
+.header-top, footer {
 	background: @blue;
 }
 .header-bottom {
 	background: @maroon;
+
+	.prog-bar {
+		ul {
+			list-style: none;
+
+			li {
+				display: inline-block;
+				width: 1rem;
+				height: 1rem;
+				border: 1px solid;
+				border-radius: 100%;
+			}
+		}
+	}
 }
 
 .main {
@@ -37,3 +51,7 @@ body, header, footer {
 	}
 }
 
+footer {
+	position: absolute;
+	bottom: 0;
+}

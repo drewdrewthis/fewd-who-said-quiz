@@ -1,7 +1,9 @@
 * {
-  border: 1px solid magenta;
   box-sizing: border-box;
-  background: rgba(0, 0, 0, 0.1);
+}
+html,
+body {
+  height: 100%;
 }
 body,
 header,
@@ -14,14 +16,21 @@ ul {
   list-style: none;
   padding: 0;
 }
-.header-top,
 footer {
   background: #004069;
 }
-.header-bottom {
-  background: #580421;
+header {
+  text-align: center;
 }
-.header-bottom .prog-bar ul li {
+header .header-top {
+  background: #004069;
+  padding: 1.5rem;
+}
+header .header-bottom {
+  background: #580421;
+  padding: .1rem;
+}
+header .header-bottom .prog-bar ul li {
   display: inline-block;
   width: 1rem;
   height: 1rem;
@@ -30,21 +39,60 @@ footer {
 }
 .main {
   position: relative;
+  background: url('../images/flag-bg.jpg');
+  background-size: cover;
+  height: 100%;
 }
 .main li:not(.title) {
   height: 3rem;
   width: 3rem;
   border-radius: 100%;
-  margin: auto;
-}
-.main .col {
-  width: 50%;
-  float: left;
+  margin: 1rem auto 0;
+  background: rgba(255, 255, 255, 0.2);
+  border: 3px solid;
 }
 .main .candidates-col {
   position: absolute;
-  left: calc(50% - 1.5rem);
+  left: calc(50% - 3.5rem);
   top: 0;
+}
+.main .candidates-col li {
+  height: 7rem;
+  width: 7rem;
+}
+.main .candidates-col .repub {
+  color: red;
+}
+.main .candidates-col .dem {
+  color: blue;
+}
+.main .candidates-col #bernie {
+  background: url('../images/bernie.jpg');
+  background-size: cover;
+}
+.main .candidates-col #trump {
+  background: url('../images/trump.jpg');
+  background-size: cover;
+}
+.main .candidates-col #hilary {
+  background: url('../images/hilary.jpg');
+  background-size: cover;
+}
+.main .candidates-col #cruz {
+  background: url('../images/cruz.jpg');
+  background-size: cover;
+}
+.main .col {
+  width: 50%;
+  height: 100%;
+  display: inline-block;
+  margin: 0 -2px;
+}
+.main .col-left {
+  background-color: rgba(255, 0, 0, 0.1);
+}
+.main .col-right {
+  background-color: rgba(0, 255, 0, 0.1);
 }
 footer {
   position: absolute;

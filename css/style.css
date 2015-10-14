@@ -8,6 +8,7 @@ footer {
   width: 100%;
   background: lightgrey;
   color: white;
+  text-align: center;
 }
 .header-top,
 .footer {
@@ -15,4 +16,17 @@ footer {
 }
 .header-bottom {
   background: #580421;
+}
+.main {
+  position: relative;
+}
+.main .col {
+  width: 50%;
+  float: left;
+}
+.main .candidates-col {
+  position: absolute;
+  width: 6rem;
+  left: calc(47%);
+  top: 0;
 }

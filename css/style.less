@@ -12,6 +12,7 @@ body, header, footer {
 	width: 100%;
 	background: lightgrey;
 	color: white;
+	text-align: center;
 }
 
 .header-top, .footer {
@@ -20,3 +21,19 @@ body, header, footer {
 .header-bottom {
 	background: @maroon;
 }
+
+.main {
+	position: relative;
+	
+	.col {
+		width: 50%;
+		float: left;
+	}
+	.candidates-col {
+		position: absolute;
+		width: 6rem;
+		left: calc(50% - 3rem);
+		top: 0;
+	}
+}
+

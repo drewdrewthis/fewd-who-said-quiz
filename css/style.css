@@ -55,7 +55,7 @@ header .header-bottom .prog-bar ul .visited {
   border-radius: 100%;
   margin: 1rem auto 0;
   background: rgba(255, 255, 255, 0.2);
-  border: 3px solid;
+  border: 3px dotted;
 }
 .main .candidates-col {
   position: absolute;
@@ -65,6 +65,9 @@ header .header-bottom .prog-bar ul .visited {
 .main .candidates-col li {
   height: 7rem;
   width: 7rem;
+  border-radius: 100%;
+  border: 3px solid;
+  margin: 1rem auto 0;
 }
 .main .candidates-col .repub {
   color: red;
@@ -93,6 +96,17 @@ header .header-bottom .prog-bar ul .visited {
   height: 100%;
   display: inline-block;
   margin: 0 -2px;
+}
+.main .col li:not(.title) {
+  height: 7rem;
+  width: 7rem;
+  border-radius: 100%;
+  margin: 1rem auto;
+  background: rgba(255, 255, 255, 0.2);
+  border: 3px dotted;
+}
+.main .col li:not(.title).ui-state-highlight {
+  border: 0px solid;
 }
 .main .col-left {
   background-color: rgba(255, 0, 0, 0.1);

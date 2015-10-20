@@ -1,9 +1,6 @@
 $( document ).ready(function() {
-    console.log( "ready!" );
-
 
     var currentElement = "";
-    
 
     $(".no-list, .yes-list").children("li:not(.title)")
     	// Why does this class need to be hard coded into the html file?
@@ -20,7 +17,7 @@ $( document ).ready(function() {
 	        console.log($(this).prop("id") + " " + $(this).data("candidate"));
 	      },
 	      out: function( event, ui ) {
-	      	$( this ).removeClass( "ui-state-highlight" );
+	      	$( this ).removeClass( "ui-recieved" );
 	      }
 	});
 
@@ -34,5 +31,4 @@ $( document ).ready(function() {
 		snapMode: "inner",
 		snapTolerance: 30
 	});
-
 });

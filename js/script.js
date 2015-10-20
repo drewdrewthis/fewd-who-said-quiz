@@ -2,7 +2,7 @@ $( document ).ready(function() {
     console.log( "ready!" );
 
 
-
+    var currentElement = "";
     
 
     $(".no-list, .yes-list").children("li:not(.title)")
@@ -10,15 +10,25 @@ $( document ).ready(function() {
     	// If it's not, the element isn't snappable.
     	//.addClass('.ui-widget-header')
     	.droppable({
+
 	      activeClass: "ui-state-default",
 	      hoverClass: "ui-state-hover",
 	      drop: function( event, ui ) {
-	        $( this ).addClass( "ui-state-highlight" );
+	        $( this ).addClass( "ui-received" )
+	        .data("candidate",currentElement);
+
+	        console.log($(this).prop("id") + " " + $(this).data("candidate"));
+	      },
+	      out: function( event, ui ) {
+	      	$( this ).removeClass( "ui-state-highlight" );
 	      }
 	});
 
 	$(".candidate-list").children("li")
 	.draggable({ 
+		start: function( event, ui ) {
+			currentElement = $(this).prop('id');
+		},
 		revert: "invalid", 
 		snap: ".ui-widget-header",
 		snapMode: "inner",

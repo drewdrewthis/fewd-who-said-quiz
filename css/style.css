@@ -105,8 +105,9 @@ header .header-bottom .prog-bar ul .visited {
   background: rgba(255, 255, 255, 0.2);
   border: 3px dotted;
 }
-.main .col li:not(.title).ui-state-highlight {
-  border: 0px solid;
+.main .col li:not(.title).ui-received {
+  border: .1rem solid;
+  padding: 1px;
 }
 .main .col-left {
   background-color: rgba(255, 0, 0, 0.1);

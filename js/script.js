@@ -1,38 +1,13 @@
 $( document ).ready(function() {
-	
-    var q = [
-    	{ 	question : "Should abortion be a woman's unresricted right?",
-    		bernie : { 
-    			support : true, 
-    			answer : "does think abortion should be a woman's unrestricted right."
-    		},
-    		hilary : { 
-    			support : true, 
-    			answer : "does think abortion should be a woman's unrestricted right."
-    		},
-    		trump : { 
-    			support : false, 
-    			answer : "thinks abortion should NOT be a woman's unrestricted right."
-    		},
-    		cruz : { 
-    			support : false, 
-    			answer : "thinks abortion should NOT be a woman's unrestricted right."
-    		},
-    	},
-    	{ 	question : "This is question 2!",
-    		bernie : "Yes",
-    		hilary : "Yes",
-    		trump : "No",
-    		cruz : "No"
-    	}
-    ];
 
     var currentElement = "",
     	qNum = 0,
     	thisRoundScore = 0,
-    	totalScore = 0;
+    	totalScore = 0,
+    	q = [];
 
     function start() {
+
     	$('.question-placeholder').text(q[qNum].question);	
 
     	// Clone DOM to reset on next round
@@ -96,7 +71,7 @@ $( document ).ready(function() {
     	alert('this button works!');
 
     	// Replace saved DOM - DOESN'T work!! Why?
-    	$(document).data('body').replaceAll('body');
+    	//$(document).data('body').replaceAll('body');
     }
 
 
@@ -151,6 +126,16 @@ $( document ).ready(function() {
 	});
 
 
-	start();
-	
+	// Initializes JSON file.
+	$.getJSON( "js/data.json", function(data) {
+	  	console.log("This ran");
+	  	console.log(data);
+	  	q = data;
+	})
+	.done(function(){
+		start();
+	})
+	.fail(function() {
+		console.log("Fail");
+	});
 });

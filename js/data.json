@@ -1,0 +1,27 @@
+[
+
+    {   "question" : "Should abortion be a woman's unresricted right?",
+        "bernie" : { 
+            "support" : true, 
+            "answer" : "does think abortion should be a woman's unrestricted right."
+        },
+        "hilary" : { 
+            "support" : true, 
+            "answer" : "does think abortion should be a woman's unrestricted right."
+        },
+        "trump" : { 
+            "support" : false, 
+            "answer" : "thinks abortion should NOT be a woman's unrestricted right."
+        },
+        "cruz" : { 
+            "support" : false, 
+            "answer" : "thinks abortion should NOT be a woman's unrestricted right."
+        }
+    },
+    {   "question" : "This is question 2!",
+        "bernie" : "Yes",
+        "hilary" : "Yes",
+        "trump" : "No",
+        "cruz" : "No"
+    }
+]

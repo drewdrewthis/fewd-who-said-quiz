@@ -122,6 +122,7 @@ $( document ).ready(function() {
 	.draggable({ 
 		start: function( event, ui ) {
 			currentElement = $(this).prop('id');
+			$(this).addClass('smallercircle');
 		},
 		stop: function( event, ui ) {
 			checkRoundOver();

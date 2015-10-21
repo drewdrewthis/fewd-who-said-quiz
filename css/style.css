@@ -26,7 +26,7 @@ header {
 header .header-top {
   background: #004069;
   padding: .1rem;
-  font-size: 2rem;
+  font-size: 1.7rem;
   text-transform: uppercase;
 }
 header .header-top h1 {
@@ -35,7 +35,7 @@ header .header-top h1 {
 header .header-bottom {
   background: #580421;
   padding: .1rem;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 header .header-bottom h2 {
   margin: 0;
@@ -78,6 +78,10 @@ header .header-bottom .prog-bar ul .visited {
   width: 20rem;
   left: calc(50% - 10rem);
   z-index: 2;
+  padding: 1rem;
+  background: rgba(36, 36, 54, 0.79);
+  color: #D1DCFF;
+  letter-spacing: 0.7px;
 }
 .main .proceed-dialog li {
   margin: .5rem;
@@ -97,13 +101,16 @@ header .header-bottom .prog-bar ul .visited {
   color: red;
 }
 .main .proceed-dialog button {
-  background: blue;
+  background: #004069;
   padding: 0.5rem 1rem;
+}
+.main .proceed-dialog button:hover {
+  background: #000203;
 }
 .main .candidates-col {
   position: absolute;
   left: calc(50% - 3.5rem);
-  top: 5rem;
+  top: 3rem;
 }
 .main .candidates-col li {
   height: 7rem;
@@ -111,6 +118,10 @@ header .header-bottom .prog-bar ul .visited {
   border-radius: 100%;
   border: 3px solid;
   margin: 1rem auto 0;
+}
+.main .candidates-col .smallercircle {
+  height: 6rem;
+  width: 6rem;
 }
 .main .candidates-col .repub {
   color: red;
@@ -144,8 +155,8 @@ header .header-bottom .prog-bar ul .visited {
   font-size: 3rem;
 }
 .main .col li:not(.title) {
-  height: 7rem;
-  width: 7rem;
+  height: 6rem;
+  width: 6rem;
   border-radius: 100%;
   margin: 1rem auto;
   background: rgba(255, 255, 255, 0.2);

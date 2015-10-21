@@ -35,7 +35,7 @@ header {
 	.header-top {
 		background: @blue;
 		padding: .1rem;
-		font-size: 2rem;
+		font-size: 1.7rem;
 		text-transform: uppercase;
 		h1 {
 			margin: 0;
@@ -44,7 +44,7 @@ header {
 	.header-bottom {
 		background: @maroon;
 		padding: .1rem;
-		font-size: 1.5rem;
+		font-size: 1.4rem;
 		h2 {
 			margin: 0;
 		}
@@ -97,6 +97,10 @@ header {
 		width: 20rem;
 		left: ~"calc(50% - 10rem)";
 		z-index: 2;
+		padding: 1rem;
+		background: rgba(36, 36, 54, 0.79);
+		color: #D1DCFF;
+		letter-spacing: 0.7px;
 
 		li {
 			margin: .5rem;
@@ -120,15 +124,19 @@ header {
 		}
 
 		button {
-			background: blue;
+			background: @blue;
 			padding: 0.5rem 1rem;
+
+			&:hover {
+				background: darken(@blue, 20%);
+			}
 		}
 
 	}
 	.candidates-col {
 		position: absolute;
 		left: ~"calc(50% - 3.5rem)";
-		top: 5rem;
+		top: 3rem;
 
 		li {
 			height: 7rem;
@@ -136,6 +144,11 @@ header {
 			border-radius: 100%;
 			border: 3px solid;
 			margin: 1rem auto 0;
+		}
+
+		.smallercircle {
+			height: 6rem;
+			width: 6rem;
 		}
 
 		.repub {
@@ -173,8 +186,8 @@ header {
 		}
 
 		li:not(.title) {
-			height: 7rem;
-			width: 7rem;
+			height: 6rem;
+			width: 6rem;
 			border-radius: 100%;
 			margin: 1rem auto;
 			background: rgba(255, 255, 255, 0.2);

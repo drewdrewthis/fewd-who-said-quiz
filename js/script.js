@@ -57,6 +57,10 @@ $( document ).ready(function() {
 		$('#next-btn').on('click', function() {
 			next();
 		});
+
+		$('.reset').on('click', function() {
+			reset();
+		});
 	};
 
     function start() {
@@ -71,9 +75,12 @@ $( document ).ready(function() {
 
     function gameOver(){
     	console.log("Game Over");
-    	$('.proceed-dialog').text("Game Over!");
-    	$('.proceed-dialog').append('<h3>Your score is</h3>');
+    	$('.proceed-dialog ul').remove();
+    	$('.proceed-dialog h2').text("Game Over!");
+    	$('.proceed-dialog h3').text('Your score is');
     	$('.proceed-dialog').append('<h1>'+totalScore+'</h1>');
+    	$('.proceed-dialog #next-btn').hide();
+    	$('.proceed-dialog .reset').show();
     }
 
     // I thought this would let me run it in the console, but it doesn't. Why?
@@ -149,6 +156,11 @@ $( document ).ready(function() {
     		start();
     	}
     }
+
+    function reset(){
+    	qNum = 0;
+    	start();
+    };
 
 	// Initializes JSON file.
 	$.getJSON( "js/data.json", function(data) {

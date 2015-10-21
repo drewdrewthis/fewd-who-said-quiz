@@ -123,7 +123,6 @@ $( document ).ready(function() {
     }
 
     function next() {
-    	alert('Next button works!');
 
     	// Replace saved DOM - DOESN'T work!! Why?
     	$(document).data('body').replaceAll('.main');
@@ -131,7 +130,6 @@ $( document ).ready(function() {
 
     	//$('.candidate').remove();
     	start();
-
     }
 
 	// Initializes JSON file.

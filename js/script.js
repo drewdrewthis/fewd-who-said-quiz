@@ -18,6 +18,14 @@ $( document ).ready(function() {
     var currentElement = "",
     	currentQuestion = 0;
 
+    function start() {
+    	$('.question-placeholder').text(q[0].question);	
+    };
+
+    function roundOver(){
+    	$('.proceed-dialog, .overlay').show();
+    }
+
     function checkRoundOver(){
     	var placed = 0;
     	$('.ui-widget-header').each( function( index, element ) {
@@ -28,7 +36,7 @@ $( document ).ready(function() {
     			console.log("placed =" + placed);
 
     			if(placed == 4) {
-    				$('.proceed-dialog, .overlay').show();
+    				roundOver();
     			}
     		}
     	});
@@ -67,4 +75,8 @@ $( document ).ready(function() {
 		snapMode: "inner",
 		snapTolerance: 30
 	});
+
+
+	start();
+	
 });

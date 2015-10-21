@@ -70,11 +70,22 @@ header {
     z-index: 1;
 }
 
+.over-overly {
+	z-index: 2;
+}
+
 .main {
 	position: relative;
 	background: url('../images/flag-bg.jpg');
 	background-size: cover;
 	height: 100%;
+
+	.proceed-dialog {
+		position: absolute;
+		width: 20rem;
+		left: ~"calc(50% - 10rem)";
+		z-index: 2;
+	}
 
 	li:not(.title) {
 		height: 3rem;
@@ -90,12 +101,6 @@ header {
 		position: absolute;
 		left: ~"calc(50% - 3.5rem)";
 		top: 0;
-		
-		.proceed-dialog {
-			position: absolute;
-			width: 20rem;
-			left: ~"calc(50% - 10rem)";
-		}
 
 		li {
 			height: 7rem;

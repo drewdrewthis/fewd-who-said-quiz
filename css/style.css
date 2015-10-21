@@ -50,11 +50,20 @@ header .header-bottom .prog-bar ul .visited {
   background: rgba(50, 50, 50, 0.5);
   z-index: 1;
 }
+.over-overly {
+  z-index: 2;
+}
 .main {
   position: relative;
   background: url('../images/flag-bg.jpg');
   background-size: cover;
   height: 100%;
+}
+.main .proceed-dialog {
+  position: absolute;
+  width: 20rem;
+  left: calc(50% - 10rem);
+  z-index: 2;
 }
 .main li:not(.title) {
   height: 3rem;
@@ -68,11 +77,6 @@ header .header-bottom .prog-bar ul .visited {
   position: absolute;
   left: calc(50% - 3.5rem);
   top: 0;
-}
-.main .candidates-col .proceed-dialog {
-  position: absolute;
-  width: 20rem;
-  left: calc(50% - 10rem);
 }
 .main .candidates-col li {
   height: 7rem;

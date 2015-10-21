@@ -1,6 +1,22 @@
 $( document ).ready(function() {
 
-    var currentElement = "";
+    var q = [
+    	{ 	question : "Should abortion be a woman's unresricted right?",
+    		bernie : "Yes",
+    		hilary : "Yes",
+    		trump : "No",
+    		cruz : "No"
+    	},
+    	{ 	question : "This is question 2!",
+    		bernie : "Yes",
+    		hilary : "Yes",
+    		trump : "No",
+    		cruz : "No"
+    	}
+    ];
+
+    var currentElement = "",
+    	currentQuestion = 0;
 
     function checkRoundOver(){
     	var placed = 0;
@@ -12,7 +28,7 @@ $( document ).ready(function() {
     			console.log("placed =" + placed);
 
     			if(placed == 4) {
-    				$('.proceed-dialog').show();
+    				$('.proceed-dialog, .overlay').show();
     			}
     		}
     	});

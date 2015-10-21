@@ -136,7 +136,7 @@ $( document ).ready(function() {
 
 	// Initializes JSON file.
 	$.getJSON( "js/data.json", function(data) {
-	  	console.log("This ran");
+	  	console.log("JSON Retrieved");
 	  	console.log(data);
 	  	q = data;
 	})
@@ -144,6 +144,6 @@ $( document ).ready(function() {
 		start();
 	})
 	.fail(function() {
-		console.log("Fail");
+		console.log("JSON Failed");
 	});
 });

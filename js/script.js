@@ -28,17 +28,24 @@ $( document ).ready(function() {
     ];
 
     var currentElement = "",
-    	qNum = 0;
+    	qNum = 0,
+    	thisRoundScore = 0,
+    	totalScore = 0;
 
     function start() {
     	$('.question-placeholder').text(q[qNum].question);	
-    	var thisRoundScore = 0;
     };
 
-    function checkAns() {
+    // I thought this would let me run it in the console, but it doesn't. Why?
+    var checkAns = function() {
+
+    	var answer = "";
 
     	for(var candidate in q[qNum]) {
-    		if(q[qNum].candidate.userAns == "Correct") {
+
+    		answer = eval("q[qNum]." + candidate + ".userAns");
+
+    		if(answer == "Correct") {
     			thisRoundScore += 25;
     		}
     	}
@@ -49,8 +56,6 @@ $( document ).ready(function() {
     function roundOver(){
     	$('.proceed-dialog, .overlay').show();
 
-    	
-
     	$('#bernieAns').text(q[0].bernie.answer);
     	$('#hilaryAns').text(q[0].hilary.answer);
     	$('#trumpAns').text(q[0].trump.answer);
@@ -59,6 +64,8 @@ $( document ).ready(function() {
     	console.log(q[qNum]);
 
     	checkAns();
+
+    	totalScore += thisRoundScore;
     }
 
     function checkRoundOver(){

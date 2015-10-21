@@ -32,6 +32,9 @@ footer {
 
 header {
 	text-align: center;
+	position: relative;
+	z-index: 2;
+	box-shadow: 0 0 7rem black;
 	.header-top {
 		background: @blue;
 		padding: .1rem;
@@ -188,6 +191,7 @@ header {
 
 		.title {
 			font-size: 3rem;
+			text-shadow: 0 0 1.5rem #4D4E58;
 		}
 
 		li:not(.title) {
@@ -197,6 +201,7 @@ header {
 			margin: 1rem auto;
 			background: rgba(255, 255, 255, 0.2);
 			border: 3px dotted;
+			box-shadow: 0 0 3rem rgba(255, 255, 255, 0.65);
 
 			&.ui-received {
 				border: .1rem solid;

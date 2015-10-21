@@ -22,6 +22,9 @@ footer {
 }
 header {
   text-align: center;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 0 7rem black;
 }
 header .header-top {
   background: #004069;
@@ -158,6 +161,7 @@ header .header-bottom .prog-bar ul .visited {
 }
 .main .col .title {
   font-size: 3rem;
+  text-shadow: 0 0 1.5rem #4D4E58;
 }
 .main .col li:not(.title) {
   height: 6rem;
@@ -166,6 +170,7 @@ header .header-bottom .prog-bar ul .visited {
   margin: 1rem auto;
   background: rgba(255, 255, 255, 0.2);
   border: 3px dotted;
+  box-shadow: 0 0 3rem rgba(255, 255, 255, 0.65);
 }
 .main .col li:not(.title).ui-received {
   border: .1rem solid;

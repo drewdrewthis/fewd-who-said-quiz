@@ -14,8 +14,8 @@ $( document ).ready(function() {
 		//.addClass('.ui-widget-header')
 		.droppable({
 
-			activeClass: "ui-state-default",
-			hoverClass: "ui-state-hover",
+			activeClass: "ui-hover",
+			hoverClass: "ui-hover",
 			drop: function( event, ui ) {
 				$( this ).addClass( "ui-received" )
 					.data("candidate",currentElement);

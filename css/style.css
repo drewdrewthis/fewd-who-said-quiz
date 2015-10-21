@@ -25,16 +25,29 @@ header {
 }
 header .header-top {
   background: #004069;
-  padding: 1.5rem;
+  padding: .1rem;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+header .header-top h1 {
+  margin: 0;
 }
 header .header-bottom {
   background: #580421;
   padding: .1rem;
+  font-size: 1.5rem;
+}
+header .header-bottom h2 {
+  margin: 0;
+}
+header .header-bottom .prog-bar ul {
+  margin: 0;
+  padding-bottom: 1rem;
 }
 header .header-bottom .prog-bar ul li {
   display: inline-block;
-  width: 1rem;
-  height: 1rem;
+  width: .6rem;
+  height: .6rem;
   border: 1px solid;
   border-radius: 100%;
 }
@@ -58,6 +71,7 @@ header .header-bottom .prog-bar ul .visited {
   position: relative;
   background: url('../images/flag-bg.jpg');
   background-size: cover;
+  height: 100%;
 }
 .main .proceed-dialog {
   position: absolute;
@@ -85,7 +99,7 @@ header .header-bottom .prog-bar ul .visited {
 .main .candidates-col {
   position: absolute;
   left: calc(50% - 3.5rem);
-  top: 0;
+  top: 5rem;
 }
 .main .candidates-col li {
   height: 7rem;
@@ -120,6 +134,10 @@ header .header-bottom .prog-bar ul .visited {
   width: 50%;
   display: inline-block;
   margin: 0 -2px;
+  height: 100%;
+}
+.main .col .title {
+  font-size: 3rem;
 }
 .main .col li:not(.title) {
   height: 7rem;

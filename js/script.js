@@ -12,7 +12,7 @@ $( document ).ready(function() {
     			console.log("placed =" + placed);
 
     			if(placed == 4) {
-    				alert("Round over");
+    				$('.proceed-dialog').show();
     			}
     		}
     	});

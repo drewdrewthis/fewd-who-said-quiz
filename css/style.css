@@ -172,6 +172,13 @@ header .header-bottom .prog-bar ul .visited {
 .main .col-right {
   background-color: rgba(0, 255, 0, 0.1);
 }
+#hi {
+  position: absolute;
+  bottom: -9rem;
+  text-align: center;
+  width: 100%;
+  color: #004069;
+}
 footer {
   position: fixed;
   bottom: 0;

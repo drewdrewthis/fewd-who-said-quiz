@@ -96,6 +96,10 @@ header .header-bottom .prog-bar ul .visited {
 .main .proceed-dialog .userAns.Incorrect {
   color: red;
 }
+.main .proceed-dialog button {
+  background: blue;
+  padding: 0.5rem 1rem;
+}
 .main .candidates-col {
   position: absolute;
   left: calc(50% - 3.5rem);

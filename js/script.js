@@ -3,9 +3,18 @@ $( document ).ready(function() {
     var currentElement = "";
 
     function checkRoundOver(){
+    	var placed = 0;
     	$('.ui-widget-header').each( function( index, element ) {
-    		if($(this).data('candidate'))
-    			console.log($(this).prop('id') + " has someone ");
+    		
+    		if($(this).data('candidate')){
+    			console.log($(this).prop('id') + " has " + $(this).data('candidate'));
+    			placed++;
+    			console.log("placed =" + placed);
+
+    			if(placed == 4) {
+    				alert("Round over");
+    			}
+    		}
     	});
     }
 

@@ -11,7 +11,9 @@ $( document ).ready(function() {
     	$('.question-placeholder').text(q[qNum].question);	
 
     	// Clone DOM to reset on next round
-    	$(document).data('body', $('body').clone(true));
+    	$(document).data('body', $('.main').clone(true,true));
+
+    	addHandlers();
     };
 
     // I thought this would let me run it in the console, but it doesn't. Why?
@@ -68,63 +70,68 @@ $( document ).ready(function() {
     }
 
     function next() {
-    	alert('this button works!');
+    	alert('Next button works!');
 
     	// Replace saved DOM - DOESN'T work!! Why?
-    	//$(document).data('body').replaceAll('body');
+    	$(document).data('body').replaceAll('.main');
+    	$('.overlay').hide();
+
+    	//$('.candidate').remove();
+    	start();
+
     }
 
+    function addHandlers() {
+	    $(".no-list, .yes-list").children("li:not(.title)")
+		// Why does this class need to be hard coded into the html file?
+		// If it's not, the element isn't snappable.
+		//.addClass('.ui-widget-header')
+		.droppable({
 
-    $(".no-list, .yes-list").children("li:not(.title)")
-	// Why does this class need to be hard coded into the html file?
-	// If it's not, the element isn't snappable.
-	//.addClass('.ui-widget-header')
-	.droppable({
+			activeClass: "ui-state-default",
+			hoverClass: "ui-state-hover",
+			drop: function( event, ui ) {
+				$( this ).addClass( "ui-received" )
+					.data("candidate",currentElement);
+					console.log($(this).prop("id") + " : " + $(this).data("candidate"));
 
-		activeClass: "ui-state-default",
-		hoverClass: "ui-state-hover",
-		drop: function( event, ui ) {
-			$( this ).addClass( "ui-received" )
-				.data("candidate",currentElement);
-				console.log($(this).prop("id") + " : " + $(this).data("candidate"));
+					var candidate = eval("q[qNum]." + currentElement);
+					
+					if( ($(this).hasClass('yes') && (candidate.support == true)) || 
+						($(this).hasClass('no') && (candidate.support == false)) ) 
+					{
+						candidate.userAns = "Correct";
+					}
+					else {
+						candidate.userAns = "Incorrect";
+					}
+				},
+			out: function( event, ui ) {
+				$(this).removeClass( "ui-received" )
+					.data("candidate", null);
+					console.log("removed");
+			}
+		});
 
-				var candidate = eval("q[qNum]." + currentElement);
-				
-				if( ($(this).hasClass('yes') && (candidate.support == true)) || 
-					($(this).hasClass('no') && (candidate.support == false)) ) 
-				{
-					candidate.userAns = "Correct";
-				}
-				else {
-					candidate.userAns = "Incorrect";
-				}
+		$(".candidate-list").children("li")
+		.draggable({ 
+			start: function( event, ui ) {
+				currentElement = $(this).prop('id');
+				$(this).addClass('smallercircle');
 			},
-		out: function( event, ui ) {
-			$(this).removeClass( "ui-received" )
-				.data("candidate", null);
-				console.log("removed");
-		}
-	});
+			stop: function( event, ui ) {
+				checkRoundOver();
+			},
+			revert: "invalid", 
+			snap: ".ui-widget-header",
+			snapMode: "inner",
+			snapTolerance: 30
+		});
 
-	$(".candidate-list").children("li")
-	.draggable({ 
-		start: function( event, ui ) {
-			currentElement = $(this).prop('id');
-			$(this).addClass('smallercircle');
-		},
-		stop: function( event, ui ) {
-			checkRoundOver();
-		},
-		revert: "invalid", 
-		snap: ".ui-widget-header",
-		snapMode: "inner",
-		snapTolerance: 30
-	});
-
-	$('#next-btn').on('click', function() {
-		next();
-	});
-
+		$('#next-btn').on('click', function() {
+			next();
+		});
+	};
 
 	// Initializes JSON file.
 	$.getJSON( "js/data.json", function(data) {

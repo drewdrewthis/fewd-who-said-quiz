@@ -65,6 +65,23 @@ header .header-bottom .prog-bar ul .visited {
   left: calc(50% - 10rem);
   z-index: 2;
 }
+.main .proceed-dialog li {
+  margin: .5rem;
+  border-top: 1px solid;
+  padding: .5rem;
+}
+.main .proceed-dialog .userAns {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.main .proceed-dialog .userAns.Correct {
+  color: green;
+}
+.main .proceed-dialog .userAns.Incorrect {
+  color: red;
+}
 .main .candidates-col {
   position: absolute;
   left: calc(50% - 3.5rem);
@@ -124,7 +141,7 @@ header .header-bottom .prog-bar ul .visited {
   background-color: rgba(0, 255, 0, 0.1);
 }
 footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
 }
 .hidden {

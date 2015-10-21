@@ -85,6 +85,27 @@ header {
 		width: 20rem;
 		left: ~"calc(50% - 10rem)";
 		z-index: 2;
+
+		li {
+			margin: .5rem;
+			border-top: 1px solid;
+			padding: .5rem;
+		}
+
+		.userAns {
+			display: block;
+			font-size: 1.5rem;
+			font-weight: bold;
+			text-transform: uppercase;
+
+			&.Correct {
+				color: green;
+			}
+
+			&.Incorrect {
+				color: red;
+			}
+		}
 	}
 	.candidates-col {
 		position: absolute;
@@ -157,7 +178,7 @@ header {
 }
 
 footer {
-	position: absolute;
+	position: fixed;
 	bottom: 0;
 }
 

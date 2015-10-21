@@ -56,10 +56,14 @@ $( document ).ready(function() {
     function roundOver(){
     	$('.proceed-dialog, .overlay').show();
 
-    	$('#bernieAns').text(q[0].bernie.answer);
-    	$('#hilaryAns').text(q[0].hilary.answer);
-    	$('#trumpAns').text(q[0].trump.answer);
-    	$('#cruzAns').text(q[0].cruz.answer);
+    	$('#bernieAns').text(q[qNum].bernie.answer);
+    	$('#hilaryAns').text(q[qNum].hilary.answer);
+    	$('#trumpAns').text(q[qNum].trump.answer);
+    	$('#cruzAns').text(q[qNum].cruz.answer);
+    	$('#userBernieAns').text(q[qNum].bernie.userAns).addClass(q[qNum].bernie.userAns);
+    	$('#userHilaryAns').text(q[qNum].hilary.userAns).addClass(q[qNum].hilary.userAns);
+    	$('#userTrumpAns').text(q[qNum].trump.userAns).addClass(q[qNum].trump.userAns);
+    	$('#userCruzAns').text(q[qNum].cruz.userAns).addClass(q[qNum].cruz.userAns);
 
     	console.log(q[qNum]);
 

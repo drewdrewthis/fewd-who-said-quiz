@@ -4,6 +4,7 @@
 html,
 body {
   height: 100%;
+  font-family: 'Open Sans Condensed', sans-serif;
 }
 body,
 header,
@@ -57,7 +58,6 @@ header .header-bottom .prog-bar ul .visited {
   position: relative;
   background: url('../images/flag-bg.jpg');
   background-size: cover;
-  height: 100%;
 }
 .main .proceed-dialog {
   position: absolute;
@@ -118,7 +118,6 @@ header .header-bottom .prog-bar ul .visited {
 }
 .main .col {
   width: 50%;
-  height: 100%;
   display: inline-block;
   margin: 0 -2px;
 }

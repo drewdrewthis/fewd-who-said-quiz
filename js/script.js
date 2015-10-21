@@ -6,81 +6,7 @@ $( document ).ready(function() {
     	totalScore = 0,
     	q = [];
 
-    function start() {
-
-    	$('.question-placeholder').text(q[qNum].question);	
-
-    	// Clone DOM to reset on next round
-    	$(document).data('body', $('.main').clone(true,true));
-
-    	addHandlers();
-    };
-
-    // I thought this would let me run it in the console, but it doesn't. Why?
-    var checkAns = function() {
-
-    	var answer = "";
-
-    	for(var candidate in q[qNum]) {
-
-    		answer = eval("q[qNum]." + candidate + ".userAns");
-
-    		if(answer == "Correct") {
-    			thisRoundScore += 25;
-    		}
-    	}
-
-    	alert('Your score is ' + thisRoundScore)
-    }
-
-    function roundOver(){
-    	$('.proceed-dialog, .overlay').show();
-
-    	$('#bernieAns').text(q[qNum].bernie.answer);
-    	$('#hilaryAns').text(q[qNum].hilary.answer);
-    	$('#trumpAns').text(q[qNum].trump.answer);
-    	$('#cruzAns').text(q[qNum].cruz.answer);
-    	$('#userBernieAns').text(q[qNum].bernie.userAns).addClass(q[qNum].bernie.userAns);
-    	$('#userHilaryAns').text(q[qNum].hilary.userAns).addClass(q[qNum].hilary.userAns);
-    	$('#userTrumpAns').text(q[qNum].trump.userAns).addClass(q[qNum].trump.userAns);
-    	$('#userCruzAns').text(q[qNum].cruz.userAns).addClass(q[qNum].cruz.userAns);
-
-    	console.log(q[qNum]);
-
-    	checkAns();
-
-    	totalScore += thisRoundScore;
-
-    	$('.score').text(totalScore);
-    }
-
-    function checkRoundOver(){
-    	var placed = 0;
-    	$('.ui-widget-header').each( function( index, element ) {
-    		
-    		if($(this).data('candidate')){
-    			//console.log($(this).prop('id') + " has " + $(this).data('candidate'));
-    			placed++;
-    			if(placed == 4) {
-    				roundOver();
-    			}
-    		}
-    	});
-    	console.log(placed + " candidates placed");
-    }
-
-    function next() {
-    	alert('Next button works!');
-
-    	// Replace saved DOM - DOESN'T work!! Why?
-    	$(document).data('body').replaceAll('.main');
-    	$('.overlay').hide();
-
-    	//$('.candidate').remove();
-    	start();
-
-    }
-
+    
     function addHandlers() {
 	    $(".no-list, .yes-list").children("li:not(.title)")
 		// Why does this class need to be hard coded into the html file?
@@ -132,6 +58,81 @@ $( document ).ready(function() {
 			next();
 		});
 	};
+
+    function start() {
+
+    	$('.question-placeholder').text(q[qNum].question);	
+
+    	// Clone DOM to reset on next round
+    	$(document).data('body', $('.main').clone(true,true));
+
+    	addHandlers();
+    };
+
+    // I thought this would let me run it in the console, but it doesn't. Why?
+    var checkAns = function() {
+
+    	var answer = "";
+
+    	for(var candidate in q[qNum]) {
+
+    		answer = eval("q[qNum]." + candidate + ".userAns");
+
+    		if(answer == "Correct") {
+    			thisRoundScore += 25;
+    		}
+    	}
+
+    	$('.roundPoints').text(thisRoundScore);
+    }
+
+    function roundOver(){
+    	$('.proceed-dialog, .overlay').show();
+
+    	$('#bernieAns').text(q[qNum].bernie.answer);
+    	$('#hilaryAns').text(q[qNum].hilary.answer);
+    	$('#trumpAns').text(q[qNum].trump.answer);
+    	$('#cruzAns').text(q[qNum].cruz.answer);
+    	$('#userBernieAns').text(q[qNum].bernie.userAns).addClass(q[qNum].bernie.userAns);
+    	$('#userHilaryAns').text(q[qNum].hilary.userAns).addClass(q[qNum].hilary.userAns);
+    	$('#userTrumpAns').text(q[qNum].trump.userAns).addClass(q[qNum].trump.userAns);
+    	$('#userCruzAns').text(q[qNum].cruz.userAns).addClass(q[qNum].cruz.userAns);
+
+    	console.log(q[qNum]);
+
+    	checkAns();
+
+    	totalScore += thisRoundScore;
+
+    	$('.score').text(totalScore);
+    }
+
+    function checkRoundOver(){
+    	var placed = 0;
+    	$('.ui-widget-header').each( function( index, element ) {
+    		
+    		if($(this).data('candidate')){
+    			//console.log($(this).prop('id') + " has " + $(this).data('candidate'));
+    			placed++;
+    			if(placed == 4) {
+    				roundOver();
+    			}
+    		}
+    	});
+    	console.log(placed + " candidates placed");
+    }
+
+    function next() {
+    	alert('Next button works!');
+
+    	// Replace saved DOM - DOESN'T work!! Why?
+    	$(document).data('body').replaceAll('.main');
+    	$('.overlay').hide();
+
+    	//$('.candidate').remove();
+    	start();
+
+    }
 
 	// Initializes JSON file.
 	$.getJSON( "js/data.json", function(data) {

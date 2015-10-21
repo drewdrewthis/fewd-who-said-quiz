@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-
+	
     var q = [
     	{ 	question : "Should abortion be a woman's unresricted right?",
     		bernie : { 
@@ -34,6 +34,9 @@ $( document ).ready(function() {
 
     function start() {
     	$('.question-placeholder').text(q[qNum].question);	
+
+    	// Clone DOM to reset on next round
+    	$(document).data('body', $('body').clone(true));
     };
 
     // I thought this would let me run it in the console, but it doesn't. Why?
@@ -90,7 +93,10 @@ $( document ).ready(function() {
     }
 
     function next() {
-    	alert('works!');
+    	alert('this button works!');
+
+    	// Replace saved DOM - DOESN'T work!! Why?
+    	$(document).data('body').replaceAll('body');
     }
 
 
@@ -140,7 +146,9 @@ $( document ).ready(function() {
 		snapTolerance: 30
 	});
 
-	$('#next-btn').on('click', next());
+	$('#next-btn').on('click', function() {
+		next();
+	});
 
 
 	start();

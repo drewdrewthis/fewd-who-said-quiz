@@ -70,6 +70,8 @@ $( document ).ready(function() {
     	checkAns();
 
     	totalScore += thisRoundScore;
+
+    	$('.score').text(totalScore);
     }
 
     function checkRoundOver(){
@@ -86,6 +88,11 @@ $( document ).ready(function() {
     	});
     	console.log(placed + " candidates placed");
     }
+
+    function next() {
+    	alert('works!');
+    }
+
 
     $(".no-list, .yes-list").children("li:not(.title)")
 	// Why does this class need to be hard coded into the html file?
@@ -132,6 +139,8 @@ $( document ).ready(function() {
 		snapMode: "inner",
 		snapTolerance: 30
 	});
+
+	$('#next-btn').on('click', next());
 
 
 	start();

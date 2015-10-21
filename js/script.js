@@ -124,6 +124,8 @@ $( document ).ready(function() {
 
     function next() {
 
+    	qNum++;
+
     	// Replace saved DOM - DOESN'T work!! Why?
     	$(document).data('body').replaceAll('.main');
     	$('.overlay').hide();

@@ -69,6 +69,13 @@ $( document ).ready(function() {
     	addHandlers();
     };
 
+    function gameOver(){
+    	console.log("Game Over");
+    	$('.proceed-dialog').text("Game Over!");
+    	$('.proceed-dialog').append('<h3>Your score is</h3>');
+    	$('.proceed-dialog').append('<h1>'+totalScore+'</h1>');
+    }
+
     // I thought this would let me run it in the console, but it doesn't. Why?
     var checkAns = function() {
 
@@ -84,6 +91,8 @@ $( document ).ready(function() {
     	}
 
     	$('.roundPoints').text(thisRoundScore);
+
+    	
     }
 
     function roundOver(){
@@ -126,12 +135,19 @@ $( document ).ready(function() {
 
     	qNum++;
 
-    	// Replace saved DOM - DOESN'T work!! Why?
-    	$(document).data('body').replaceAll('.main');
-    	$('.overlay').hide();
+    	if(qNum == (q.length)){
+    		gameOver();
 
-    	//$('.candidate').remove();
-    	start();
+    		return "Game Over";
+    	}
+    	else {
+    		// Replace saved DOM - DOESN'T work!! Why?
+    		$(document).data('body').replaceAll('.main');
+    		$('.overlay').hide();
+
+    		//$('.candidate').remove();
+    		start();
+    	}
     }
 
 	// Initializes JSON file.

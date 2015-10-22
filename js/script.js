@@ -7,6 +7,11 @@ $( document ).ready(function() {
     	highScore = 0,
     	q = [];
 
+    function buildProgbar(q) {
+    	for(var i = 0; i < q.length; i++) {
+    		$('.prog-bar ul').append('<li id="number' +(i+1)+'"></li>');
+    	};
+    };
     
     function addHandlers() {
 	    $(".no-list, .yes-list").children("li:not(.title)")
@@ -65,6 +70,9 @@ $( document ).ready(function() {
 	};
 
     function start() {
+
+    	$('#number'+(qNum)).toggleClass('active');
+    	$('#number'+(qNum+1)).toggleClass('active').addClass('visited');
     	$('.question-placeholder').text(q[qNum].question);	
     	// Clone DOM to reset on next round
     	$(document).data('body', $('.main').clone(true,true));
@@ -166,6 +174,7 @@ $( document ).ready(function() {
     	};
     	thisRoundScore = 0;
     	totalScore = 0;
+    	$('.visited').removeClass('visited');
 		// Replace saved DOM - DOESN'T work!! Why?
 		$(document).data('body').replaceAll('.main');
 		$('.overlay').hide();
@@ -179,6 +188,7 @@ $( document ).ready(function() {
 	  	q = data;
 	})
 	.done(function(){
+		buildProgbar(q);
 		start();
 	})
 	.fail(function() {

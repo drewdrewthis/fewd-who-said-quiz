@@ -16,5 +16,77 @@
             "support" : false, 
             "answer" : "thinks abortion should NOT be a woman's unrestricted right."
         }
+    },
+    {   "question" : "Are you comfortable with same sex marriage?",
+        "bernie" : { 
+            "support" : true, 
+            "answer" : "is comfortable with same sex marriage."
+        },
+        "hilary" : { 
+            "support" : true, 
+            "answer" : "is comfortable with same sex marriage."
+        },
+        "trump" : { 
+            "support" : false, 
+            "answer" : "is against same sex marriage!"
+        },
+        "cruz" : { 
+            "support" : false, 
+            "answer" : "is against same sex marriage!"
+        }
+    },
+    {   "question" : "Should the be stricter limits on political campaign funds?",
+        "bernie" : { 
+            "support" : true, 
+            "answer" : "does think that there should be stricter limits on political campaign funds."
+        },
+        "hilary" : { 
+            "support" : true, 
+            "answer" : "supports stricter limits on political campaign funds."
+        },
+        "trump" : { 
+            "support" : false, 
+            "answer" : "does not think that there should be stricter limits on political campaign funds."
+        },
+        "cruz" : { 
+            "support" : false, 
+            "answer" : "does not think that there should be stricter limits on political campaign funds."
+        }
+    },
+    {   "question" : "Should we privatize social security?",
+        "bernie" : { 
+            "support" : false, 
+            "answer" : "does not think we should privatize social security."
+        },
+        "hilary" : { 
+            "support" : true, 
+            "answer" : "does think we should privatize social security."
+        },
+        "trump" : { 
+            "support" : true, 
+            "answer" : "does think we should privatize social security."
+        },
+        "cruz" : { 
+            "support" : true, 
+            "answer" : "does think we should privatize social security."
+        }
+    },
+    {   "question" : "Should we support and expand free trade?",
+        "bernie" : { 
+            "support" : false, 
+            "answer" : "does not think we should support and expand free trade."
+        },
+        "hilary" : { 
+            "support" : true, 
+            "answer" : "does think we should support and expand free trade."
+        },
+        "trump" : { 
+            "support" : true, 
+            "answer" : "does think we should support and expand free trade."
+        },
+        "cruz" : { 
+            "support" : false, 
+            "answer" : "does not think we should support and expand free trade."
+        }
     }
 ]

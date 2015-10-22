@@ -4,6 +4,7 @@ $( document ).ready(function() {
     	qNum = 0,
     	thisRoundScore = 0,
     	totalScore = 0,
+    	highScore = 0,
     	q = [];
 
     
@@ -14,8 +15,8 @@ $( document ).ready(function() {
 		//.addClass('.ui-widget-header')
 		.droppable({
 
-			activeClass: "ui-hover",
-			hoverClass: "ui-hover",
+			activeClass: "ui-state-default",
+			hoverClass: "ui-state-hover",
 			drop: function( event, ui ) {
 				$( this ).addClass( "ui-received" )
 					.data("candidate",currentElement);
@@ -159,6 +160,15 @@ $( document ).ready(function() {
 
     function reset(){
     	qNum = 0;
+
+    	if(totalScore > highScore) {
+    		highScore = totalScore;
+    		$('.highscore').text(highScore);
+    	};
+    	totalScore = 0;
+		// Replace saved DOM - DOESN'T work!! Why?
+		$(document).data('body').replaceAll('.main');
+		$('.overlay').hide();
     	start();
     };
 

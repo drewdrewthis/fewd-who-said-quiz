@@ -65,13 +65,12 @@ $( document ).ready(function() {
 	};
 
     function start() {
-
     	$('.question-placeholder').text(q[qNum].question);	
-
     	// Clone DOM to reset on next round
     	$(document).data('body', $('.main').clone(true,true));
-
     	addHandlers();
+    	thisRoundScore = 0;
+    	$('.score').text(thisRoundScore);
     };
 
     function gameOver(){
@@ -165,6 +164,7 @@ $( document ).ready(function() {
     		highScore = totalScore;
     		$('.highscore').text(highScore);
     	};
+    	thisRoundScore = 0;
     	totalScore = 0;
 		// Replace saved DOM - DOESN'T work!! Why?
 		$(document).data('body').replaceAll('.main');

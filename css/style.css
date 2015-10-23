@@ -1,9 +1,15 @@
 * {
   box-sizing: border-box;
 }
+html {
+  background: url('../images/flag-bg.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 html,
 body {
-  height: 100%;
   font-family: 'Open Sans Condensed', sans-serif;
 }
 body,
@@ -79,9 +85,6 @@ header .header-bottom .prog-bar ul .visited {
 }
 .main {
   position: relative;
-  background: url('../images/flag-bg.jpg');
-  background-size: cover;
-  height: 100%;
 }
 .main .proceed-dialog {
   position: absolute;
@@ -162,7 +165,6 @@ header .header-bottom .prog-bar ul .visited {
   width: 50%;
   display: inline-block;
   margin: 0 -2px;
-  height: 100%;
 }
 .main .col .title {
   font-size: 3rem;

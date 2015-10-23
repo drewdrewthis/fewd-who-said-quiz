@@ -77,7 +77,6 @@ $( document ).ready(function() {
     	// Clone DOM to reset on next round
     	$(document).data('body', $('.main').clone(true,true));
     	addHandlers();
-    	thisRoundScore = 0;
     	$('.score').text(thisRoundScore);
     };
 
@@ -166,7 +165,8 @@ $( document ).ready(function() {
     }
 
     function reset(){
-    	qNum = 0;
+    	qNum = 0,
+        thisRoundScore = 0;
 
     	if(totalScore > highScore) {
     		highScore = totalScore;
@@ -175,7 +175,6 @@ $( document ).ready(function() {
     	thisRoundScore = 0;
     	totalScore = 0;
     	$('.visited').removeClass('visited');
-		// Replace saved DOM - DOESN'T work!! Why?
 		$(document).data('body').replaceAll('.main');
 		$('.overlay').hide();
     	start();

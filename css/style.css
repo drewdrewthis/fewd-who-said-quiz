@@ -123,8 +123,8 @@ header .header-bottom .prog-bar ul .visited {
   top: 3rem;
 }
 .main .candidates-col li {
-  height: 7rem;
-  width: 7rem;
+  height: 6rem;
+  width: 6rem;
   border-radius: 100%;
   border: 3px solid;
   margin: 1rem auto 0;
